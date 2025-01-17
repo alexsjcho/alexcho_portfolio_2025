@@ -80,14 +80,12 @@ export default function About() {
           </div>
           <div className="w-full max-w-3xl text-center">
             <p className="text-lg mb-4">
-              Hi, I'm [Your Name], an AI Product Manager with a passion for creating innovative solutions at the intersection of artificial intelligence and user-centric design.
+              Hello World! My name is Alex Cho and the challenge of this entire portfolio is to build majority of the projects via Generative AI tools. 
             </p>
             <p className="text-lg mb-4">
-              With [X] years of experience in the tech industry, I've successfully led cross-functional teams to deliver cutting-edge AI products that solve real-world problems and delight users.
+              I've been a self-taught developer and this time around I am trying to learn AI related skills myself and apply them in the projects in this portfolio. 
             </p>
-            <p className="text-lg">
-              My expertise spans from conceptualizing AI-driven features to managing the entire product lifecycle, always with a focus on ethical AI practices and measurable business impact.
-            </p>
+          
           </div>
         </div>
       </section>
