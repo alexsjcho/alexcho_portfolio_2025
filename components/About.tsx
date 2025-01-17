@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const images = [
-  { id: 1, src: 'https://drive.google.com/file/d/1L_-daGdrO1tyvkFxTfdo-bYWKlKbYdin/view?usp=drive_link', alt: 'shenyang2024' },
-  { id: 2, src: 'https://drive.google.com/file/d/1vmZuWD9HmzSKOTyjzVnI_fO_i8c3okc8/view?usp=drive_link', alt: 'canada2022' },
-  { id: 3, src: 'https://drive.google.com/file/d/123JvOvXwvLBp5U4X0GjnEMo9M4BWrgBj/view?usp=drive_link', alt: 'hawaii2022' },
-  { id: 4, src: 'https://drive.google.com/file/d/1YZgWAW_MBmPTu24BMd9RXfD-MY0w3Gbo/view?usp=drive_link', alt: 'hawaii2022_1' },
-  { id: 5, src: 'https://drive.google.com/file/d/19Z9EKh7A8GMF7afgpDmz7zHbSU08zByO/view?usp=drive_link', alt: 'fostercity2019' },
-  { id: 6, src: 'https://drive.google.com/file/d/12h15A5hgXO-ThH-WKCP2IwarblH6jorK/view?usp=drive_link', alt: 'academyofart2019' },
-  { id: 7, src: 'https://drive.google.com/file/d/1rMqFxUnrHWWTp97JGXeprMRuPCS55Whs/view?usp=drive_link', alt: 'yosemite2019' },
-  { id: 8, src: 'https://drive.google.com/file/d/1q4lqiDeV5iW7PaKERcZoaJSquHLgEMHA/view?usp=drive_link', alt: 'seapoint_sf_2019' }
+  { id: 1, src: '/img/shenyang2024.jpg', alt: 'shenyang2024' },
+  { id: 2, src: '/img/canada2022.jpg', alt: 'canada2022' },
+  { id: 3, src: '/img/hawaii2022.jpg', alt: 'hawaii2022' },
+  { id: 4, src: '/img/hawaii2022_1.jpg', alt: 'hawaii2022_1' },
+  { id: 5, src: '/img/fostercity2019.jpg', alt: 'fostercity2019' },
+  { id: 6, src: '/img/academyofart2019.jpg', alt: 'academyofart2019' },
+  { id: 7, src: '/img/yosemite2019.jpg', alt: 'yosemite2019' },
+  { id: 8, src: '/img/seapoint_sf_2019.jpg', alt: 'seapoint_sf_2019' }
 ]
 
 export default function About() {
