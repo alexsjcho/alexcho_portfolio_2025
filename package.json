@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "deploy": "next build && touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "deploy": "next build && cp public/404.html out/ && touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

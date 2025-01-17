@@ -3,44 +3,59 @@
 import { useState } from 'react'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-const skillsData = {
-  'Web Development': {
-    skills: ['React', 'Next.js', 'Node.js', 'TypeScript'],
-    color: 'bg-blue-200 text-blue-800'
-  },
-  'AI/ML': {
-    skills: ['TensorFlow', 'PyTorch', 'NLP', 'Computer Vision'],
-    color: 'bg-green-200 text-green-800'
-  },
-  'Sales & Marketing': {
-    skills: ['Market Research', 'CRM', 'Digital Marketing', 'Analytics'],
-    color: 'bg-yellow-200 text-yellow-800'
-  },
-  'UX/UI Design': {
-    skills: ['Figma', 'Adobe XD', 'User Research', 'Prototyping'],
-    color: 'bg-purple-200 text-purple-800'
-  },
-  'Project Management': {
-    skills: ['Agile', 'Scrum', 'JIRA', 'Risk Management'],
-    color: 'bg-red-200 text-red-800'
-  },
-  'Other': {
-    skills: ['Data Analysis', 'Technical Writing', 'Public Speaking', 'Team Leadership'],
-    color: 'bg-gray-200 text-gray-800'
-  },
+// First, define the category type
+type SkillCategory = 'Web Development' | 'AI/ML' | 'Sales & Marketing' | 'UX/UI Design' | 'Project Management' | 'Other';
+
+// Define the structure of skill data
+interface SkillData {
+  skills: string[];
+  color: string;
 }
 
-export default function Skills() {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+// Define the type for skillsData
+type SkillsDataType = {
+  [K in SkillCategory]: SkillData;
+}
 
-  const filteredSkills = selectedCategory === 'All'
+// Define your skillsData with the correct type
+const skillsData: SkillsDataType = {
+  'Web Development': {
+    skills: ['React', 'Next.js', 'TypeScript', /* ... */],
+    color: 'bg-blue-500'
+  },
+  'AI/ML': {
+    skills: ['TensorFlow', 'PyTorch', /* ... */],
+    color: 'bg-green-500'
+  },
+  'Sales & Marketing': {
+    skills: ['Market Analysis', 'CRM', /* ... */],
+    color: 'bg-yellow-500'
+  },
+  'UX/UI Design': {
+    skills: ['Figma', 'Adobe XD', /* ... */],
+    color: 'bg-purple-500'
+  },
+  'Project Management': {
+    skills: ['Agile', 'Scrum', /* ... */],
+    color: 'bg-red-500'
+  },
+  'Other': {
+    skills: ['Problem Solving', 'Communication', /* ... */],
+    color: 'bg-gray-500'
+  }
+};
+
+export default function Skills() {
+  const [selectedCategory, setSelectedCategory] = useState<SkillCategory | 'All'>('All');
+
+  const displayedSkills = selectedCategory === 'All'
     ? Object.entries(skillsData).flatMap(([category, { skills, color }]) => 
         skills.map(skill => ({ skill, category, color }))
       )
-    : skillsData[selectedCategory]?.skills.map(skill => ({ 
+    : skillsData[selectedCategory as SkillCategory]?.skills.map(skill => ({ 
         skill, 
         category: selectedCategory, 
-        color: skillsData[selectedCategory].color 
+        color: skillsData[selectedCategory as SkillCategory].color 
       })) || []
 
   return (
@@ -63,7 +78,7 @@ export default function Skills() {
           </Select>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {filteredSkills.map(({ skill, color }) => (
+          {displayedSkills.map(({ skill, color }) => (
             <div key={skill} className={`p-4 rounded-lg shadow-md text-center ${color}`}>
               {skill}
             </div>

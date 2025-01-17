@@ -6,6 +6,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
+// First, define the valid categories
+type CategoryType = 'AI/ML Projects' | 'Web Applications' | 'Mobile Apps' | 'UX/UI Design Projects';
+
+interface Project {
+  title: string;
+  description: string;
+  category: CategoryType;  // Use the specific type here
+  image: string;
+  demo: string;
+  repo: string;
+}
+
 const projectsData = [
   {
     title: 'AI-Powered Customer Service Chatbot',
@@ -57,11 +69,17 @@ const projectsData = [
   },
 ]
 
-const categoryColors = {
+// Define a type for the category colors
+type CategoryColors = {
+  [K in CategoryType]: string;
+}
+
+// Define the categoryColors object with the correct type
+const categoryColors: CategoryColors = {
   'AI/ML Projects': 'bg-blue-100 text-blue-800',
   'Web Applications': 'bg-green-100 text-green-800',
-  'Mobile Apps': 'bg-yellow-100 text-yellow-800',
-  'UX/UI Design Projects': 'bg-purple-100 text-purple-800',
+  'Mobile Apps': 'bg-purple-100 text-purple-800',
+  'UX/UI Design Projects': 'bg-orange-100 text-orange-800'
 }
 
 const PROJECTS_PER_PAGE = 4
@@ -117,7 +135,7 @@ export default function Projects() {
           {paginatedProjects.map((project) => (
             <div key={project.title} className="bg-white p-6 rounded-lg shadow-md relative">
               {selectedCategory === 'All' && (
-                <span className={`absolute top-4 left-4 px-2 py-1 rounded-full text-xs font-semibold ${categoryColors[project.category]}`}>
+                <span className={`absolute top-4 left-4 px-2 py-1 rounded-full text-xs font-semibold ${categoryColors[project.category as CategoryType]}`}>
                   {project.category}
                 </span>
               )}
