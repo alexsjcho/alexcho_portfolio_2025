@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Github, Globe } from 'lucide-react'
+import getBasePath from '../utils/path'
 
 // First, define the valid categories
 type CategoryType = 'AI/ML' | 'Web' | 'UX/UI Design';
@@ -23,7 +24,7 @@ const projectsData = [
   {
     title: 'MentorNear',
     description: 'jQuery app: Find and meet with a mentor near you',
-    image: 'img/mentornear.png',
+    image: `${getBasePath()}/img/mentornear.png`,
     repo: 'https://github.com/alexsjcho/mentor-near-api-capstone',
     category: 'Web',
     tools: ['jQuery', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Normalize.css', '3rd Party API'],
@@ -31,7 +32,7 @@ const projectsData = [
   {
     title: 'Qualified',
     description: 'Allows users to score their sales conversations',
-    image: 'img/qualified.png',
+    image: `${getBasePath()}/img/qualified.png`,
     repo: 'https://github.com/alexsjcho/qualified-react-redux-immutable-app',
     category: 'Web',
     tools: ['React', 'Redux', 'React-Router', 'Immutable', 'Bootstrap',  'Jest', 'Enzyme', 'JavaScript', 'CSS', '3rd Party API'],
@@ -39,7 +40,7 @@ const projectsData = [
   {
     title: 'SmartOKR',
     description: 'Automate your goals via everday software tools',
-    image: '/img/sokrapp.png',
+    image: `${getBasePath()}/img/sokrapp.png`,
     repo: 'https://github.com/alexsjcho/smart-okr-react-redux-app',
     category: 'Web',
     tools: ['React', 'Redux', 'JavaScript', '3rd Party API'],
@@ -47,7 +48,7 @@ const projectsData = [
   {
     title: 'GramPages',
     description: 'GramPages provides engagement analytics for Instagram to empower influencers to make content creation decisions that will yield the greatest impact (no longer hosted, private GitHub repo)',
-    image: '/img/grampages.png',
+    image: `${getBasePath()}/img/grampages.png`,
     category: 'Web',
     tools: ['JavaScript', 'CSS', '3rd Party API', 'React', 'Redux', 'React-Router', 'Express', 'Node.js', 'MongoDB', 'Mongoose'],
   },
@@ -55,7 +56,7 @@ const projectsData = [
   {
     title: 'Rollout System',
     description: 'Internal ByteDance intent-based deployment IaC product',
-    image: '/img/rolloutsystem.png',
+    image: `${getBasePath()}/img/rolloutsystem.png`,
     demo: 'https://www.figma.com/proto/NdFRq7UsKkyrfIFddtZitG/RLS-Q32024?node-id=36-27387&t=PDo2dUO7bLGzoPVl-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
     category: 'UX/UI Design',
     tools: ['Figma'],
@@ -64,7 +65,7 @@ const projectsData = [
   {
     title: 'ByteGate',
     description: 'Internal ByteDance feature flagging product',
-    image: '/img/bytegate.png',
+    image: `${getBasePath()}/img/bytegate.png`,
     demo: 'https://www.figma.com/proto/qEPSOnfWhm3Qbd4RQWOAWc/feature-gate-Q3-2024?node-id=1-52442&node-type=FRAME&t=ghsDeWkF9NHlYaUR-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A11',
     category: 'UX/UI Design',
     tools: ['Figma'],
@@ -72,7 +73,7 @@ const projectsData = [
   {
     title: 'AI-Driven Financial Forecasting Tool',
     description: 'Developed a machine learning model to predict market trends and provide financial insights with 85% accuracy.',
-    image: '/placeholder.svg?height=200&width=300',
+    image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
     demo: 'https://example.com/demo5',
     repo: 'https://github.com/example/repo5',
     category: 'AI/ML',
@@ -81,7 +82,7 @@ const projectsData = [
   {
     title: 'AI-Powered Customer Service Chatbot',
     description: 'Developed an intelligent chatbot using NLP to improve customer service efficiency by 40%.',
-    image: '/placeholder.svg?height=200&width=300',
+    image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
     demo: 'https://example.com/demo1',
     repo: 'https://github.com/example/repo1',
     category: 'AI/ML',
