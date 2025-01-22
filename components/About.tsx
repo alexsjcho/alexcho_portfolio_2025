@@ -80,7 +80,7 @@ export default function About() {
           </div>
           <div className="w-full max-w-3xl text-center mb-20">
             <p className="text-lg mb-4 text-white font-light leading-relaxed">
-              Hello World! My name is Alex Cho, a multi-disciplinary <span className="font-semibold text-blue-300">Product Manager</span> ranging as a <span className="font-semibold text-green-300">Self-Taught Developer</span>, Full-Cycle Sales from <span className="font-semibold text-yellow-300">Lead Generation</span> to <span className="font-semibold text-yellow-300">Customer Success</span>, <span className="font-semibold text-purple-300">UX Designer</span>, and <span className="font-semibold text-orange-300">Operations & Marketing</span>.
+              Hello World! My name is Alex Cho, a multi-disciplinary <span className="font-semibold text-blue-300">Product Manager</span> ranging as a <span className="font-semibold text-green-300">Self-Taught Developer</span>, Full-Cycle Sales from <span className="font-semibold text-gray-300">Lead Generation</span> to <span className="font-semibold text-yellow-300">Customer Success</span>, <span className="font-semibold text-purple-300">UX Designer</span>, <span className="font-semibold text-orange-300">Operations </span>, and <span className="font-semibold text-red-300">Marketing</span>.
             </p>
             <p className="text-lg mb-4 text-white font-light leading-relaxed">
               I travelled to <span className="font-semibold text-pink-300">25+ cities</span> in China and <span className="font-semibold text-pink-300">10+ countries</span> around the world.
