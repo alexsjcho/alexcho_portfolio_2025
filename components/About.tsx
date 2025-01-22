@@ -82,7 +82,10 @@ export default function About() {
               Hello World! My name is Alex Cho, a Product Manager and self-taught developer. 
             </p>
             <p className="text-lg mb-4 text-white font-light leading-relaxed">
-              The challenge of this entire portfolio is to build majority of the projects via Generative AI tools in order to learn AI/ML related skills myself and apply them in the projects. 
+              I travelled to 25+ cities in China and 10+ countries. 
+            </p>
+            <p className="text-lg mb-4 text-white font-light leading-relaxed">
+              Current hobbies include music jaming: guitar, piano, lead and harmony vocals, video games, and traveling. Previously a b-boy competing in the Bay Area.
             </p>
           </div>
         </div>

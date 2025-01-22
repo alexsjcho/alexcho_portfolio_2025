@@ -14,8 +14,9 @@ interface Project {
   description: string;
   category: CategoryType;  // Use the specific type here
   image: string;
-  demo: string;
-  repo: string;
+  demo?: string;
+  repo?: string;
+  tools: string[];  // Add tools array
 }
 
 const projectsData = [
@@ -25,26 +26,30 @@ const projectsData = [
     image: 'img/mentornear.png',
     repo: 'https://github.com/alexsjcho/mentor-near-api-capstone',
     category: 'Web',
+    tools: ['jQuery', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Normalize.css', '3rd Party API'],
   },
   {
     title: 'Qualified',
-    description: 'React/redux web-app that allows users to score your sales conversations',
+    description: 'Allows users to score their sales conversations',
     image: 'img/qualified.png',
     repo: 'https://github.com/alexsjcho/qualified-react-redux-immutable-app',
     category: 'Web',
+    tools: ['React', 'Redux', 'React-Router', 'Immutable', 'Bootstrap',  'Jest', 'Enzyme', 'JavaScript', 'CSS', '3rd Party API'],
   },
   {
     title: 'SmartOKR',
-    description: 'React app: Automate your goals via everday software tools',
+    description: 'Automate your goals via everday software tools',
     image: '/img/sokrapp.png',
     repo: 'https://github.com/alexsjcho/smart-okr-react-redux-app',
     category: 'Web',
+    tools: ['React', 'Redux', 'JavaScript', '3rd Party API'],
   },
   {
     title: 'GramPages',
     description: 'GramPages provides engagement analytics for Instagram to empower influencers to make content creation decisions that will yield the greatest impact (no longer hosted, private GitHub repo)',
     image: '/img/grampages.png',
     category: 'Web',
+    tools: ['JavaScript', 'CSS', '3rd Party API', 'React', 'Redux', 'React-Router', 'Express', 'Node.js', 'MongoDB', 'Mongoose'],
   },
   
   {
@@ -53,6 +58,7 @@ const projectsData = [
     image: '/img/rolloutsystem.png',
     demo: 'https://www.figma.com/proto/NdFRq7UsKkyrfIFddtZitG/RLS-Q32024?node-id=36-27387&t=PDo2dUO7bLGzoPVl-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
     category: 'UX/UI Design',
+    tools: ['Figma'],
   },
 
   {
@@ -61,6 +67,7 @@ const projectsData = [
     image: '/img/bytegate.png',
     demo: 'https://www.figma.com/proto/qEPSOnfWhm3Qbd4RQWOAWc/feature-gate-Q3-2024?node-id=1-52442&node-type=FRAME&t=ghsDeWkF9NHlYaUR-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A11',
     category: 'UX/UI Design',
+    tools: ['Figma'],
   },
   {
     title: 'AI-Driven Financial Forecasting Tool',
@@ -69,6 +76,7 @@ const projectsData = [
     demo: 'https://example.com/demo5',
     repo: 'https://github.com/example/repo5',
     category: 'AI/ML',
+    tools: ['Python', 'Machine Learning', 'Data Analysis'],
   },
   {
     title: 'AI-Powered Customer Service Chatbot',
@@ -77,6 +85,7 @@ const projectsData = [
     demo: 'https://example.com/demo1',
     repo: 'https://github.com/example/repo1',
     category: 'AI/ML',
+    tools: ['Python', 'Natural Language Processing', 'Chatbot Development'],
   },
 
 ]
@@ -158,6 +167,13 @@ export default function Projects() {
               />
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-gray-600 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mt-4 mb-4">
+                {project.tools.map((tool) => (
+                  <span key={tool} className="px-2 py-1 bg-gray-100 rounded-full text-xs">
+                    {tool}
+                  </span>
+                ))}
+              </div>
               <div className="flex space-x-4">
                 {project.demo && (
                   <Button asChild>
