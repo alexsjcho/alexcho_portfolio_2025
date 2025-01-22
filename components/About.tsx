@@ -7,6 +7,7 @@ const images = [
   { id: 1, src: '/img/shenyang2024.jpg', alt: 'shenyang2024' },
   { id: 2, src: '/img/canada2022.jpg', alt: 'canada2022' },
   { id: 3, src: '/img/hawaii2022.jpg', alt: 'hawaii2022' },
+  { id: 4, src: '/img/muirwood.jpg', alt: 'muirwoods2022' },
   { id: 5, src: '/img/fostercity2019.jpg', alt: 'fostercity2019' },
   { id: 6, src: '/img/academyofart2019.jpg', alt: 'academyofart2019' },
   { id: 7, src: '/img/yosemite2019.jpg', alt: 'yosemite2019' },
