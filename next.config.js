@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production'
+const repository = 'alexcho_portfolio_2025' // replace with your repository name
+
 const nextConfig = {
     output: 'export',
     images: {
         unoptimized: true,
     },
-    basePath: process.env.NODE_ENV === 'production' ? '/alexcho_portfolio_2025' : '',
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/alexcho_portfolio_2025' : '',
+    basePath: isProduction ? `/${repository}` : '',
+    assetPrefix: isProduction ? `/${repository}/` : '',
+    trailingSlash: true,
     webpack: (config, { dev, isServer }) => {
         if (dev && !isServer) {
             config.watchOptions = {
