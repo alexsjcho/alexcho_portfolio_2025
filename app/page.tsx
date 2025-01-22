@@ -12,13 +12,7 @@ export default function Home() {
       
       {/* About section with wavy background */}
       <section id="about" className="relative">
-        <WavyBackground 
-          className="max-w-4xl mx-auto pb-40"
-          colors={['#38bdf8', '#818cf8', '#c084fc', '#e879f9', '#22d3ee']}
-          blur={10}
-          speed="fast"
-          waveOpacity={0.5}
-        >
+        <WavyBackground>
           <div className="max-w-6xl mx-auto px-4">
             <About />
           </div>

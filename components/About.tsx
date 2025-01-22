@@ -32,10 +32,10 @@ export default function About() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto mt-40">
-      <section className="py-20 px-4">
+    <div className="max-w-6xl mx-auto mt-30 pt-16 min-h-screen">
+      <section className="py-20 px-4 h-full">
         <h2 className="text-4xl font-bold mb-8 text-center text-white font-sans tracking-tight">About Me</h2>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center h-full">
           <div className="w-full relative h-[400px] md:h-[600px] mb-8">
             {images.map((image, index) => (
               <Image
@@ -77,15 +77,15 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className="w-full max-w-3xl text-center">
+          <div className="w-full max-w-3xl text-center mb-20">
             <p className="text-lg mb-4 text-white font-light leading-relaxed">
-              Hello World! My name is Alex Cho, a Product Manager and self-taught developer. 
+              Hello World! My name is Alex Cho, a multi-disciplinary <span className="font-semibold text-blue-300">Product Manager</span> ranging as a <span className="font-semibold text-green-300">Self-Taught Developer</span>, Full-Cycle Sales from <span className="font-semibold text-yellow-300">Lead Generation</span> to <span className="font-semibold text-yellow-300">Customer Success</span>, <span className="font-semibold text-purple-300">UX Designer</span>, and <span className="font-semibold text-orange-300">Operations & Marketing</span>.
             </p>
             <p className="text-lg mb-4 text-white font-light leading-relaxed">
-              I travelled to 25+ cities in China and 10+ countries. 
+              I travelled to <span className="font-semibold text-pink-300">25+ cities</span> in China and <span className="font-semibold text-pink-300">10+ countries</span> around the world.
             </p>
             <p className="text-lg mb-4 text-white font-light leading-relaxed">
-              Current hobbies include music jaming: guitar, piano, lead and harmony vocals, video games, and traveling. Previously a b-boy competing in the Bay Area.
+              Current hobbies include <span className="font-semibold text-blue-300">music</span>: guitar, piano, lead and harmony vocals, <span className="font-semibold text-green-300">video games</span>, and <span className="font-semibold text-yellow-300">traveling</span>. Previously a <span className="font-semibold text-purple-300">b-boy</span> competing in the Bay Area.
             </p>
           </div>
         </div>
