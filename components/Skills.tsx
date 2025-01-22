@@ -118,10 +118,10 @@ export default function Skills() {
             <SelectTrigger>
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="All">All Skills</SelectItem>
+            <SelectContent className="bg-white dark:bg-gray-800">
+              <SelectItem value="All" className="cursor-pointer">All Skills</SelectItem>
               {Object.keys(skillsData).map((category) => (
-                <SelectItem key={category} value={category}>
+                <SelectItem key={category} value={category} className="cursor-pointer">
                   {category}
                 </SelectItem>
               ))}

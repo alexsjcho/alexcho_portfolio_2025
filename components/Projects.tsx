@@ -142,11 +142,11 @@ export default function Projects() {
             <SelectTrigger>
               <SelectValue placeholder="Select a category" />
             </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="All">All Projects</SelectItem>
-              <SelectItem value="Web">Web</SelectItem>
-              <SelectItem value="AI/ML">AI/ML</SelectItem>
-              <SelectItem value="UX/UI Design">UX/UI Design</SelectItem>
+            <SelectContent className="bg-white dark:bg-gray-800">
+              <SelectItem value="All" className="cursor-pointer">All Projects</SelectItem>
+              <SelectItem value="Web" className="cursor-pointer">Web</SelectItem>
+              <SelectItem value="AI/ML" className="cursor-pointer">AI/ML</SelectItem>
+              <SelectItem value="UX/UI Design" className="cursor-pointer">UX/UI Design</SelectItem>
             </SelectContent>
           </Select>
         </div>
