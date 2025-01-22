@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf .next && rm -rf out",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run clean && next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
-    "deploy": "next build && cp public/404.html out/ && touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -69,6 +69,7 @@
     "@types/react-dom": "^18.3.5",
     "gh-pages": "^6.3.0",
     "postcss": "^8",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
   },
