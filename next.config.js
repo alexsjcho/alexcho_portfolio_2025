@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-  // Only include basePath if you're deploying to GitHub Pages
-  // basePath: '/your-repo-name',
+    output: 'export',
+    images: {
+        unoptimized: true,
+    },
+    basePath: '/alexcho_portfolio_2025/',  // Add this - should match your repository name
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
