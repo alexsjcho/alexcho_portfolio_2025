@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 // First, define the category type
-type SkillCategory = 'Web Development' | 'AI/ML' | 'Sales & Marketing' | 'UX/UI Design' | 'Project Management' | 'Other';
+type SkillCategory = 'Web Development' | 'AI/ML' | 'Sales/Customer Success/Solutions' | 'UX/UI Design' | 'Product Management' | 'Product Marketing'
 
 // Define the structure of skill data
 interface SkillData {
@@ -20,29 +20,30 @@ type SkillsDataType = {
 // Define your skillsData with the correct type
 const skillsData: SkillsDataType = {
   'Web Development': {
-    skills: ['React', 'Next.js', 'TypeScript', /* ... */],
+    skills: ['React', 'Next.js', 'JavaScript', 'HTML', 'CSS', 'RESTful API', 'SQL', 'NoSQL', 'CI/CD' /* ... */],
     color: 'bg-blue-500'
   },
   'AI/ML': {
-    skills: ['TensorFlow', 'PyTorch', /* ... */],
+    skills: ['Python', 'PyTorch', 'Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning' /* ... */],
     color: 'bg-green-500'
   },
-  'Sales & Marketing': {
-    skills: ['Market Analysis', 'CRM', /* ... */],
+  'Sales/Customer Success/Solutions': {
+    skills: ['Qualification Frameworks', 'Prospecting & Lead Generation', 'Sales Process', 'Retention & Renewal', 'Account Management' , 'Solution Proof-of-Concept' /* ... */],
     color: 'bg-yellow-500'
   },
   'UX/UI Design': {
-    skills: ['Figma', 'Adobe XD', /* ... */],
+    skills: ['Figma UI Design', 'Wireframe & Prototype', 'User Research & Analysis', 'Information Architecture' /* ... */],
     color: 'bg-purple-500'
   },
-  'Project Management': {
-    skills: ['Agile', 'Scrum', /* ... */],
+  'Product Management': {
+    skills: ['Agile/Scrum', 'Requirement Docs', 'Decision Making/Prioritization', 'Product Roadmap & Strategy' /* ... */],
     color: 'bg-red-500'
   },
-  'Other': {
-    skills: ['Problem Solving', 'Communication', /* ... */],
-    color: 'bg-gray-500'
+  'Product Marketing': {
+    skills: ['Messaging & Positioning', 'Go-to-Market Strategy', 'Market Competitive Analysis', 'Content Marketing', 'Competitive Battlecards' /* ... */],
+    color: 'bg-teal-500'
   }
+
 };
 
 export default function Skills() {
@@ -78,8 +79,13 @@ export default function Skills() {
           </Select>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {displayedSkills.map(({ skill, color }) => (
-            <div key={skill} className={`p-4 rounded-lg shadow-md text-center ${color}`}>
+          {displayedSkills.map(({ skill, category, color }) => (
+            <div key={skill} className={`relative p-4 rounded-lg shadow-md text-center ${color}`}>
+              {selectedCategory === 'All' && (
+                <span className="absolute -top-2 left-2 px-2 py-0.5 bg-gray-800 text-white text-xs rounded-full">
+                  {category}
+                </span>
+              )}
               {skill}
             </div>
           ))}

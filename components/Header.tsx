@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu } from 'lucide-react'
+import { useRouter } from 'next/router'
 
 const navItems: { name: string; href: string }[] = [
   { name: 'About', href: '#about' },
@@ -10,6 +11,8 @@ const navItems: { name: string; href: string }[] = [
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' },
 ]
+
+const basePath = process.env.NODE_ENV === 'production' ? '/your-repo-name' : ''
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -28,13 +31,13 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link href="/" className="text-2xl font-bold text-white">
-            Your Name
+            Alex Cho - Product Manager
           </Link>
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                href={item.href}
+                href={`${basePath}${item.href}`}
                 className="text-gray-200 hover:text-white transition-colors"
               >
                 {item.name}
@@ -54,7 +57,7 @@ export default function Header() {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              href={item.href}
+              href={`${basePath}${item.href}`}
               className="block py-2 px-4 text-gray-200 hover:bg-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >

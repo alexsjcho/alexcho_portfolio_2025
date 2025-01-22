@@ -4,10 +4,10 @@ import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Github, Globe } from 'lucide-react'
 
 // First, define the valid categories
-type CategoryType = 'AI/ML Projects' | 'Web Applications' | 'Mobile Apps' | 'UX/UI Design Projects';
+type CategoryType = 'AI/ML' | 'Web' | 'UX/UI Design';
 
 interface Project {
   title: string;
@@ -20,36 +20,47 @@ interface Project {
 
 const projectsData = [
   {
-    title: 'AI-Powered Customer Service Chatbot',
-    description: 'Developed an intelligent chatbot using NLP to improve customer service efficiency by 40%.',
-    image: '/placeholder.svg?height=200&width=300',
-    demo: 'https://example.com/demo1',
-    repo: 'https://github.com/example/repo1',
-    category: 'AI/ML Projects',
+    title: 'MentorNear',
+    description: 'jQuery app: Find and meet with a mentor near you',
+    image: 'img/mentornear.png',
+    repo: 'https://github.com/alexsjcho/mentor-near-api-capstone',
+    category: 'Web',
   },
   {
-    title: 'E-commerce Personalization Engine',
-    description: 'Created a recommendation system that increased average order value by 25% through personalized product suggestions.',
-    image: '/placeholder.svg?height=200&width=300',
-    demo: 'https://example.com/demo2',
-    repo: 'https://github.com/example/repo2',
-    category: 'Web Applications',
+    title: 'Qualified',
+    description: 'React/redux web-app that allows users to score your sales conversations',
+    image: 'img/qualified.png',
+    repo: 'https://github.com/alexsjcho/qualified-react-redux-immutable-app',
+    category: 'Web',
   },
   {
-    title: 'Mobile App for Health Tracking',
-    description: 'Led the development of a mobile app that uses machine learning to provide personalized health insights.',
-    image: '/placeholder.svg?height=200&width=300',
-    demo: 'https://example.com/demo3',
-    repo: 'https://github.com/example/repo3',
-    category: 'Mobile Apps',
+    title: 'SmartOKR',
+    description: 'React app: Automate your goals via everday software tools',
+    image: '/img/sokrapp.png',
+    repo: 'https://github.com/alexsjcho/smart-okr-react-redux-app',
+    category: 'Web',
   },
   {
-    title: 'UX Redesign for SaaS Platform',
-    description: 'Conducted user research and redesigned the UX of a SaaS platform, resulting in a 30% increase in user engagement.',
-    image: '/placeholder.svg?height=200&width=300',
-    demo: 'https://example.com/demo4',
-    repo: 'https://github.com/example/repo4',
-    category: 'UX/UI Design Projects',
+    title: 'GramPages',
+    description: 'GramPages provides engagement analytics for Instagram to empower influencers to make content creation decisions that will yield the greatest impact (no longer hosted, private GitHub repo)',
+    image: '/img/grampages.png',
+    category: 'Web',
+  },
+  
+  {
+    title: 'Rollout System',
+    description: 'Internal ByteDance intent-based deployment IaC product',
+    image: '/img/rolloutsystem.png',
+    demo: 'https://www.figma.com/proto/NdFRq7UsKkyrfIFddtZitG/RLS-Q32024?node-id=36-27387&t=PDo2dUO7bLGzoPVl-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
+    category: 'UX/UI Design',
+  },
+
+  {
+    title: 'ByteGate',
+    description: 'Internal ByteDance feature flagging product',
+    image: '/img/bytegate.png',
+    demo: 'https://www.figma.com/proto/qEPSOnfWhm3Qbd4RQWOAWc/feature-gate-Q3-2024?node-id=1-52442&node-type=FRAME&t=ghsDeWkF9NHlYaUR-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A11',
+    category: 'UX/UI Design',
   },
   {
     title: 'AI-Driven Financial Forecasting Tool',
@@ -57,16 +68,17 @@ const projectsData = [
     image: '/placeholder.svg?height=200&width=300',
     demo: 'https://example.com/demo5',
     repo: 'https://github.com/example/repo5',
-    category: 'AI/ML Projects',
+    category: 'AI/ML',
   },
   {
-    title: 'Responsive Web Application for Event Management',
-    description: 'Built a scalable web application that streamlined event planning and increased client bookings by 50%.',
+    title: 'AI-Powered Customer Service Chatbot',
+    description: 'Developed an intelligent chatbot using NLP to improve customer service efficiency by 40%.',
     image: '/placeholder.svg?height=200&width=300',
-    demo: 'https://example.com/demo6',
-    repo: 'https://github.com/example/repo6',
-    category: 'Web Applications',
+    demo: 'https://example.com/demo1',
+    repo: 'https://github.com/example/repo1',
+    category: 'AI/ML',
   },
+
 ]
 
 // Define a type for the category colors
@@ -76,13 +88,12 @@ type CategoryColors = {
 
 // Define the categoryColors object with the correct type
 const categoryColors: CategoryColors = {
-  'AI/ML Projects': 'bg-blue-100 text-blue-800',
-  'Web Applications': 'bg-green-100 text-green-800',
-  'Mobile Apps': 'bg-purple-100 text-purple-800',
-  'UX/UI Design Projects': 'bg-orange-100 text-orange-800'
+  'AI/ML': 'bg-blue-100 text-blue-800',
+  'Web': 'bg-green-100 text-green-800',
+  'UX/UI Design': 'bg-orange-100 text-orange-800'
 }
 
-const PROJECTS_PER_PAGE = 4
+const PROJECTS_PER_PAGE = 9
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -124,14 +135,13 @@ export default function Projects() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="All">All Projects</SelectItem>
-              <SelectItem value="Web Applications">Web Applications</SelectItem>
-              <SelectItem value="Mobile Apps">Mobile Apps</SelectItem>
-              <SelectItem value="AI/ML Projects">AI/ML Projects</SelectItem>
-              <SelectItem value="UX/UI Design Projects">UX/UI Design Projects</SelectItem>
+              <SelectItem value="Web">Web</SelectItem>
+              <SelectItem value="AI/ML">AI/ML</SelectItem>
+              <SelectItem value="UX/UI Design">UX/UI Design</SelectItem>
             </SelectContent>
           </Select>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {paginatedProjects.map((project) => (
             <div key={project.title} className="bg-white p-6 rounded-lg shadow-md relative">
               {selectedCategory === 'All' && (
@@ -142,19 +152,29 @@ export default function Projects() {
               <Image
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
-                width={300}
-                height={200}
-                className="w-full h-48 object-cover rounded-md mb-4"
+                width={400}
+                height={400}
+                className="w-[300px] h-[300px] object-contain mx-auto mb-4"
               />
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
               <p className="text-gray-600 mb-4">{project.description}</p>
               <div className="flex space-x-4">
-                <Button asChild>
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer">Live Demo</a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <a href={project.repo} target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-                </Button>
+                {project.demo && (
+                  <Button asChild>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <Globe className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+                {project.repo && (
+                  <Button variant="outline" asChild>
+                    <a href={project.repo} target="_blank" rel="noopener noreferrer">
+                      <Github className="w-4 h-4 mr-2" />
+                      GitHub Repo
+                    </a>
+                  </Button>
+                )}
               </div>
             </div>
           ))}
