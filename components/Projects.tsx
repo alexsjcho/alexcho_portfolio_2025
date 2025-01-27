@@ -72,21 +72,17 @@ const projectsData = [
   },
   {
     title: 'AI-Driven Financial Forecasting Tool',
-    description: 'Developed a machine learning model to predict market trends and provide financial insights with 85% accuracy.',
+    description: 'Still building project. TBD',
     image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
-    demo: 'https://example.com/demo5',
-    repo: 'https://github.com/example/repo5',
     category: 'AI/ML',
-    tools: ['Python', 'Machine Learning', 'Data Analysis'],
+    tools: ['Python', 'Machine Learning', 'Data Analysis', 'Pandas', 'Numpy', 'Matplotlib', 'Scikit-learn', 'Jupyter Notebook'],
   },
   {
     title: 'AI-Powered Customer Service Chatbot',
-    description: 'Developed an intelligent chatbot using NLP to improve customer service efficiency by 40%.',
+    description: 'On roadmap. TBD',
     image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
-    demo: 'https://example.com/demo1',
-    repo: 'https://github.com/example/repo1',
     category: 'AI/ML',
-    tools: ['Python', 'Natural Language Processing', 'Chatbot Development'],
+    tools: ['Python', 'Natural Language Processing', 'Chatbot Development']
   },
 
 ]
