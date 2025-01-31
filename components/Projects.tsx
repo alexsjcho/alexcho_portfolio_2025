@@ -71,10 +71,11 @@ const projectsData = [
     tools: ['Figma'],
   },
   {
-    title: 'AI-Driven Financial Forecasting Tool',
-    description: 'Still building project. TBD',
-    image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
+    title: 'Apple Sales Forecasting 2024',
+    description: 'Beginner project on Apple sales forecasting for 2024',
+    image: `${getBasePath()}/img/correlation_heatmap.png`,
     category: 'AI/ML',
+    repo: 'https://github.com/alexsjcho/apple-2024-sales-dataset',
     tools: ['Python', 'Machine Learning', 'Data Analysis', 'Pandas', 'Numpy', 'Matplotlib', 'Scikit-learn', 'Jupyter Notebook'],
   },
   {
@@ -131,9 +132,9 @@ export default function Projects() {
   }
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
+    <div className="max-w-6xl mx-auto mt-8 pt-8">
+      <section className="px-4">
+        <h2 className="text-4xl font-bold mb-8 text-center text-black font-sans tracking-tight">Projects</h2>
         <div className="mb-8 w-64 mx-auto">
           <Select onValueChange={handleCategoryChange}>
             <SelectTrigger>
@@ -217,8 +218,8 @@ export default function Projects() {
             </Button>
           </div>
         )}
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 

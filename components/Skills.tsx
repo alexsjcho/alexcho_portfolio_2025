@@ -110,9 +110,9 @@ export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState<SkillCategory | 'All'>('All');
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-8 text-center">Skills</h2>
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      <section>
+        <h2 className="text-4xl font-bold mb-8 text-center text-black font-sans tracking-tight">Skills</h2>
         <div className="mb-8 w-64 mx-auto">
           <Select onValueChange={(value: SkillCategory | 'All') => setSelectedCategory(value)}>
             <SelectTrigger>
@@ -161,8 +161,8 @@ export default function Skills() {
             ))}
           </div>
         )}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

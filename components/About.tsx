@@ -34,11 +34,11 @@ export default function About() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto mt-30 pt-16 min-h-screen">
-      <section className="py-20 px-4 h-full">
+    <div className="max-w-6xl mx-auto px-4 py-16 ">
+      <section>
         <h2 className="text-4xl font-bold mb-8 text-center text-white font-sans tracking-tight">About Me</h2>
-        <div className="flex flex-col items-center h-full">
-          <div className="w-full relative h-[400px] md:h-[600px] mb-8">
+        <div className="flex flex-col items-center">
+          <div className="w-full relative h-[400px] md:h-[400px] mb-8">
             {images.map((image, index) => (
               <Image
                 key={image.id}
@@ -79,7 +79,7 @@ export default function About() {
               ))}
             </div>
           </div>
-          <div className="w-full max-w-3xl text-center mb-20">
+          <div className="w-full max-w-3xl text-center mb-10">
             <p className="text-lg mb-4 text-white font-light leading-relaxed">
               Hello World! My name is Alex Cho, a self-taught, multi-disciplinary <span className="font-semibold text-blue-300">Product Manager</span> with experience ranging from <span className="font-semibold text-green-300">Software Engineering</span>, Full-Cycle Sales from <span className="font-semibold text-gray-300">Lead Generation</span> to <span className="font-semibold text-yellow-300">Customer Success</span>, <span className="font-semibold text-purple-300">UX Design</span>, <span className="font-semibold text-orange-300">Operations </span>, and <span className="font-semibold text-red-300">Marketing</span>.
             </p>
