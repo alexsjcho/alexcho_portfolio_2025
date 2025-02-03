@@ -32,7 +32,7 @@ const skillsData: SkillsDataType = {
     color: 'bg-blue-500'
   },
   'AI/ML': {
-    skills: ['Python', 'PyTorch', 'Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning', 'Data-Analysis', 'Data-Visualization' /* ... */],
+    skills: ['Python', 'Prompt Engineering', 'LLM', 'NLP','Data-Analysis', 'Data-Visualization' /* ... */],
     color: 'bg-green-500'
   },
   'Solutions': {
