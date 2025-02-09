@@ -80,11 +80,19 @@ const projectsData = [
   },
   {
     title: 'AI-Powered Customer Service Chatbot',
+    description: 'This was a practice project to learn more about AI Agents workflows. Used Langflow as the backend to power my Next.js frontend.',
+    image: `${getBasePath()}/img/ai_agent_chatbot.png`,
+    category: 'AI/ML',
+    repo: 'https://github.com/alexsjcho/customer_support_ai_agent',
+    tools: ['Python', 'Langflow', 'OpenAI', 'Astra-DB', 'Next.js']
+  },
+  {
+    title: 'Another AI project TBD',
     description: 'On roadmap. TBD',
     image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
     category: 'AI/ML',
-    tools: ['Python', 'Natural Language Processing', 'Chatbot Development']
-  },
+    tools: ['TBD']
+  }
 
 ]
 
