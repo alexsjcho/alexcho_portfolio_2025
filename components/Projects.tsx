@@ -87,6 +87,14 @@ const projectsData = [
     tools: ['Python', 'Langflow', 'OpenAI', 'Astra-DB', 'Next.js']
   },
   {
+    title: 'Simple Terminal AI Agent',
+    description: 'Created a simple AI Agent from scratch using Anthropic\'s Claude API and tools',
+    image: `${getBasePath()}/img/ai_agent_terminal.png`,
+    category: 'AI/ML',
+    repo: 'https://github.com/alexsjcho/aiagent_from_scratch',
+    tools: ['Anthropic', 'Claude API', 'Python', 'Wikipedia Search API']
+  },
+  {
     title: 'Another AI project TBD',
     description: 'On roadmap. TBD',
     image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
