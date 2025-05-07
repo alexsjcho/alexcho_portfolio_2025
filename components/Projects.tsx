@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Github, Globe } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Github, Globe, FileText } from 'lucide-react'
 import getBasePath from '../utils/path'
 
 // First, define the valid categories
@@ -17,6 +17,7 @@ interface Project {
   image: string;
   demo?: string;
   repo?: string;
+  diagram?: string;  // Add diagram property
   tools: string[];  // Add tools array
 }
 
@@ -54,19 +55,21 @@ const projectsData = [
   },
   
   {
-    title: 'Rollout System',
-    description: 'Internal ByteDance intent-based deployment IaC product',
+    title: 'IaC Deployment App',
+    description: 'Intent-based deployment IaC product',
     image: `${getBasePath()}/img/rolloutsystem.png`,
     demo: 'https://www.figma.com/proto/NdFRq7UsKkyrfIFddtZitG/RLS-Q32024?node-id=36-27387&t=PDo2dUO7bLGzoPVl-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
+    diagram:'https://miro.com/welcomeonboard/T0xrSFdIdUJGMDdEUWNpSUh6YkFiODdLT1BJeUJxenlrNzNlTUNJYUsvaEZncE5jRXBBNFk2TmpGT09YYS9jc2Q0Vi9IY050WmU0UnMyeDFYUGZvMTU1ZkQ5ckVteHJDR1M1NS9MLzBjc0pvZ3NSb3ZpNUJsTTlkUlFuK2s1eWpNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=620487474818', 
     category: 'UX/UI Design',
     tools: ['Figma'],
   },
 
   {
-    title: 'ByteGate',
-    description: 'Internal ByteDance feature flagging product',
+    title: 'Feature Gate',
+    description: 'Feature flagging product',
     image: `${getBasePath()}/img/bytegate.png`,
-    demo: 'https://www.figma.com/proto/qEPSOnfWhm3Qbd4RQWOAWc/feature-gate-Q3-2024?node-id=1-52442&node-type=FRAME&t=ghsDeWkF9NHlYaUR-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A11',
+    demo: 'https://www.figma.com/proto/qEPSOnfWhm3Qbd4RQWOAWc/feature-gate-Q3-2024?node-id=1-52481&t=td5ZU4pdPnNBlpLM-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',
+    diagram:'https://miro.com/welcomeonboard/MnIyNm90ZG9oSHF4MHI1Y2t5bm5hOUV2QkgxbXlwM2hxTzBEWk9GVHppKzd2WklVVVkxWDdGTFVlMnJTOThWNzZ3RW93NzI3RlptRnowV2hUZk9jK1o1ZkQ5ckVteHJDR1M1NS9MLzBjc0s2eEszbUh5Nk43YWh2VWdGdDA5TWtzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=605903010087', 
     category: 'UX/UI Design',
     tools: ['Figma'],
   },
@@ -148,7 +151,7 @@ export default function Projects() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto mt-8 pt-8">
+    <div className="max-w-6xl mx-auto px-4 py-16">
       <section className="px-4">
         <h2 className="text-4xl font-bold mb-8 text-center text-black font-sans tracking-tight">Projects</h2>
         <div className="mb-8 w-64 mx-auto">
@@ -179,7 +182,9 @@ export default function Projects() {
                 height={400}
                 className="w-[300px] h-[300px] object-contain mx-auto mb-4"
               />
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+              <div className="flex items-center mb-2">
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+              </div>
               <p className="text-gray-600 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mt-4 mb-4">
                 {project.tools.map((tool) => (
@@ -202,6 +207,14 @@ export default function Projects() {
                     <a href={project.repo} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4 mr-2" />
                       GitHub Repo
+                    </a>
+                  </Button>
+                )}
+                {project.diagram && (
+                  <Button asChild>
+                    <a href={project.diagram} target="_blank" rel="noopener noreferrer">
+                      <FileText className="w-4 h-4 mr-2" />
+                      Diagram
                     </a>
                   </Button>
                 )}
