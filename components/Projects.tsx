@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight, Github, Globe, FileText } from 'lucide-react
 import getBasePath from '../utils/path'
 
 // First, define the valid categories
-type CategoryType = 'AI/ML' | 'Web' | 'UX/UI Design';
+type CategoryType = 'AI/ML' | 'Web' | 'UX/UI Design' | 'Infrastructure';
 
 interface Project {
   title: string;
@@ -97,13 +97,23 @@ const projectsData = [
     repo: 'https://github.com/alexsjcho/aiagent_from_scratch',
     tools: ['Anthropic', 'Claude API', 'Python', 'Wikipedia Search API']
   },
+ 
+  {
+    title: 'Terraform Demo',
+    description: 'Solutions Engineer demo on Terraform',
+    image: `${getBasePath()}/img/terraform_cloud.png`,
+    category: 'Infrastructure',
+    repo: 'https://github.com/alexsjcho/terraform_demo_2',
+    tools: ['Terraform', 'AWS', 'GCP', 'Sentinel', 'Terraform Cloud', 'Vault', 'Virtual Machine', 'Compute Engine', 'IAM']
+  },
+
   {
     title: 'Another AI project TBD',
     description: 'On roadmap. TBD',
     image: `${getBasePath()}/placeholder.svg?height=200&width=300`,
     category: 'AI/ML',
     tools: ['TBD']
-  }
+  },
 
 ]
 
@@ -116,7 +126,8 @@ type CategoryColors = {
 const categoryColors: CategoryColors = {
   'AI/ML': 'bg-blue-100 text-blue-800',
   'Web': 'bg-green-100 text-green-800',
-  'UX/UI Design': 'bg-orange-100 text-orange-800'
+  'UX/UI Design': 'bg-orange-100 text-orange-800',
+  'Infrastructure': 'bg-purple-100 text-purple-800'
 }
 
 const PROJECTS_PER_PAGE = 9
@@ -164,6 +175,7 @@ export default function Projects() {
               <SelectItem value="Web" className="cursor-pointer">Web</SelectItem>
               <SelectItem value="AI/ML" className="cursor-pointer">AI/ML</SelectItem>
               <SelectItem value="UX/UI Design" className="cursor-pointer">UX/UI Design</SelectItem>
+              <SelectItem value="Infrastructure" className="cursor-pointer">Infrastructure</SelectItem>
             </SelectContent>
           </Select>
         </div>
