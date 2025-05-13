@@ -32,10 +32,12 @@ export default function Header() {
               <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
                 Alex Cho
               </span>
-              <span className="text-2xl text-gray-300 mx-2">-</span>
+             
+              {/* 
+               <span className="text-2xl text-gray-300 mx-2">-</span>
               <span className="text-2xl font-semibold text-gray-300">
                 Product Manager
-              </span>
+              </span> */}
             </Link>
             <nav className="hidden md:flex space-x-8">
               {navItems.map((item) => (
