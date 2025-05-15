@@ -19,17 +19,17 @@ export default function Home() {
         </WavyBackground>
       </section>
 
-      {/* Skills section with light gray background */}
-      <section id="skills" className="bg-gray-50 py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <Skills />
-        </div>
-      </section>
-
       {/* Projects section with white background */}
       <section id="projects" className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <Projects />
+        </div>
+      </section>
+
+      {/* Skills section with light gray background */}
+      <section id="skills" className="bg-gray-50 py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <Skills />
         </div>
       </section>
 
