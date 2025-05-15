@@ -99,8 +99,8 @@ const projectsData = [
   },
  
   {
-    title: 'Terraform Demo',
-    description: 'Solutions Engineer demo on Terraform',
+    title: 'Terraform Multi-Cloud Provisioning',
+    description: 'proof-of-concept multi-cloud provisioning of compute engine resource for AWS and GCP',
     image: `${getBasePath()}/img/terraform_cloud.png`,
     category: 'Infrastructure',
     repo: 'https://github.com/alexsjcho/terraform_demo_2',
